@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>登录界面</title>
+</head>
+<body>
+    <form name="login" action="/cart/LoginServlet" method="post">
+    		用户名：<input type="text" name="username"/><br/>
+    		密码：<input type="text" name="password"/><br/>
+    		验证码：<input type="text" name="check_code">
+    			  <img alt="验证码" src="/cart/CheckServlet" id="codepic" onclick="change()"><br/> 
+    		<input type="submit" value="提交" id="btnSubmit">
+    </form>
+</body>
+<script type="text/javascript">
+	function change(){
+		var code=document.getElementById('codepic');
+		code.src="/cart/CheckServlet?"+Math.random();
+	}
+</script>
+</html>
